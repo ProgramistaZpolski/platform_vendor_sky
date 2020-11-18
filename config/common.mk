@@ -86,7 +86,10 @@ include vendor/sky/config/aosp_audio.mk
 include vendor/sky/config/sky_audio.mk
 
 # Include SkyDroid branding
-include vendor/streak/config/branding.mk
+include vendor/sky/config/branding.mk
+
+# Include Bootanimation
+include vendor/sky/config/bootanimation.mk
 
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \

@@ -150,6 +150,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     rsync
 
+WITH_GAPPS ?= true
 ifeq ($(WITH_GAPPS),true)
 # Ship GApps
 $(call inherit-product, vendor/gms/products/gms.mk)

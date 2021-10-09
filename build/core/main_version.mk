@@ -13,6 +13,5 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.mod.version=$(BUILD_ID)-$(BUILD_DATE)-$(sky_BASE_VERSION) \
     ro.sky.fingerprint=$(ROM_FINGERPRINT) \
     ro.sky.buildtype=$(sky_BUILD_TYPE) \
-    ro.sky.device=$(TARGET_PRODUCT_SHORT) \
     ro.sky.platform.version=$(PLATFORM_sky_VERSION) \
     ro.sky.build_date=$(BUILD_DATE)

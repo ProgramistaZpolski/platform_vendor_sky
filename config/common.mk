@@ -55,15 +55,6 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     product_charger_res_images
 
-# Default notification/alarm sounds
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.notification_sound=Argon.ogg \
-    ro.config.alarm_alert=Hassium.ogg
-
-# sky-specific init rc file
-PRODUCT_COPY_FILES += \
-    vendor/sky/prebuilt/common/etc/init/init.sky-system_ext.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.sky-system_ext.rc
-
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
     vendor/sky/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.nfc.beam.xml
@@ -84,17 +75,14 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=enforce
 
-# Include AOSP audio files
-include vendor/sky/config/aosp_audio.mk
-
-# Include sky audio files
-include vendor/sky/config/sky_audio.mk
-
 # Include SkyDroid branding
 include vendor/sky/config/branding.mk
 
 # Include Bootanimation
 include vendor/sky/config/bootanimation.mk
+
+# Include Pixel Sounds
+include vendor/google/sounds/sounds-vendor.mk
 
 # Media
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \

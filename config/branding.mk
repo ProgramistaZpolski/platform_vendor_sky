@@ -1,0 +1,23 @@
+
+BUILD_DATE := $(shell date +%Y%m%d)
+BUILD_TIME := $(shell date +%H%M)
+
+ifndef SKY_BUILD_TYPE
+    SKY_BUILD_TYPE := UNOFFICIAL
+endif
+
+# Set all versions
+SKY_BASE_VERSION := 12.0.0
+SKY_PLATFORM_VERSION := 12
+TARGET_PRODUCT_SHORT := $(subst SKY_,,$(TARGET_PRODUCT))
+SKY_VERSION := SKY-$(SKY_BASE_VERSION)-$(SKY_BUILD_TYPE)-$(TARGET_PRODUCT_SHORT)-$(BUILD_DATE)-$(BUILD_TIME)
+ROM_FINGERPRINT := SKY/$(PLATFORM_VERSION)/$(SKY_BUILD_TYPE)/$(BUILD_DATE)$(BUILD_TIME)
+
+ifeq ($(SKY_BUILD_TYPE),OFFICIAL)
+    PLATFORM_SKY_VERSION := $(SKY_BASE_VERSION).REL.$(shell date +%m%d%H%M)
+else
+    PLATFORM_SKY_VERSION := $(SKY_BASE_VERSION).INT.$(shell date +%m%d%H%M)
+endif
+
+# Declare it's a SkyDroid build
+SKY_BUILD := true

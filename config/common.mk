@@ -150,6 +150,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     rsync
 
+ifeq ($(WITH_GAPPS),true)
+# Ship GApps
+$(call inherit-product, vendor/gms/products/gms.mk)
+else
+# Ship lawnchair for vanilla builds
+$(call inherit-product, vendor/lawnchair/lawnchair.mk)
+endif
+
 # Storage manager
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=true

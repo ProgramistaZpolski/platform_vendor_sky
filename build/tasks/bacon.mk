@@ -14,14 +14,14 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# sky OTA update package
+# SkyDroid OTA update package
 
-sky_TARGET_PACKAGE := $(PRODUCT_OUT)/sky-$(sky_VERSION).zip
+SKY_TARGET_PACKAGE := $(PRODUCT_OUT)/SkyDroid-$(SKY_VERSION).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(sky_TARGET_PACKAGE)
-	$(hide) $(SHA256) $(sky_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(sky_TARGET_PACKAGE).sha256sum
-	@echo "Package Complete: $(sky_TARGET_PACKAGE)" >&2
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(SKY_TARGET_PACKAGE)
+	$(hide) $(SHA256) $(SKY_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(SKY_TARGET_PACKAGE).sha256sum
+	@echo "Package Complete: $(SKY_TARGET_PACKAGE)" >&2
